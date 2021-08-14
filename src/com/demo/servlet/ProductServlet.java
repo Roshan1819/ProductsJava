@@ -16,21 +16,25 @@ public class ProductServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		response.setContentType("text/html"); 
 		List<Products> plist = new ArrayList<>();
-		
+
 		plist = pservice.getAll();
-//		System.out.println(plist);
-			if(plist != null) {
-				out.print("<center><h1>Product Table</h1></center>");
+		//		System.out.println(plist);
+		if(plist != null) {
+			out.print("<center><h1>Product Table</h1></center>");
 			out.println("<center><table border = '2px solid-black'>");
-			out.println("<tr><th>Product Name</th><th>Product Price</th><th>Product Quantity</th><th>Action</th></tr>");
+			out.println("<tr><th>Pruduct Id</th><th>Product Name</th><th>Product Price</th><th>Product Quantity</th><th>Action</th></tr>");
 			for(Products p : plist){
 				out.println("<tr>");
-				out.println("<td>"+p.getName()+"</td><td>"+p.getPrice()+"</td><td>"+p.getQuantity()+"</td>");
-				out.println("<td><a href='/edit'>Edit</a> | <a href='/delete'>Delete</a></td>");
+				out.println("<td>"+p.getPid()+"</td><td>"+p.getName()+"</td><td>"+p.getPrice()+"</td><td>"+p.getQuantity()+"</td>");
+				out.println("<td><a href='edit?pid="+p.getPid()+"'>Edit</a>| <a href='delete?pid="+p.getPid()+"'>Delete</a></td>");
 				out.println("</tr>");
 			}
-			out.println("</table></center");
-			out.println("<center><a href='#'><button>ADD PRODUCT</button></a></center>");
-		}	
+			out.println("</table></center>");
+			out.println("<center><button><a href='addProduct.html'>ADD PRODUCT</a></button></center>");
+		}		
+	}
+
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		doPost(request,response);
 	}
 }

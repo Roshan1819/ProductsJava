@@ -4,31 +4,44 @@
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
   </welcome-file-list>
-	<servlet>
-  <servlet-name>validate</servlet-name>
-  <servlet-class>com.demo.servlet.Validate</servlet-class>
+  <servlet>
+    <servlet-name>validate</servlet-name>
+    <servlet-class>com.demo.servlet.Validate</servlet-class>
   </servlet>
   <servlet-mapping>
-  <servlet-name>validate</servlet-name>
-  <url-pattern>/validate</url-pattern>  
+    <servlet-name>validate</servlet-name>
+    <url-pattern>/validate</url-pattern>
   </servlet-mapping>
-	<servlet>
-		<servlet-name>regUser</servlet-name>
-		<servlet-class>com.demo.servlet.RegUser</servlet-class>
-	</servlet>	
-	<servlet-mapping>
-				<servlet-name>regUser</servlet-name>
-				<url-pattern>/regUser</url-pattern>
-	</servlet-mapping>
-		<servlet>
-		<servlet-name>product</servlet-name>
-		<servlet-class>com.demo.servlet.ProductServlet</servlet-class>
-	</servlet>	
-	<servlet-mapping>
-				<servlet-name>product</servlet-name>
-				<url-pattern>/product</url-pattern>
-	</servlet-mapping>
-	
-
-
+  <servlet>
+    <servlet-name>regUser</servlet-name>
+    <servlet-class>com.demo.servlet.RegUser</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>regUser</servlet-name>
+    <url-pattern>/regUser</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>product</servlet-name>
+    <servlet-class>com.demo.servlet.ProductServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>product</servlet-name>
+    <url-pattern>/product</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>addProduct</servlet-name>
+    <servlet-class>com.demo.servlet.addProductServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>addProduct</servlet-name>
+    <url-pattern>/addProduct</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>delete</servlet-name>
+    <servlet-class>com.demo.servlet.DeleteProductServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>delete</servlet-name>
+    <url-pattern>/delete</url-pattern>
+  </servlet-mapping>
 </web-app>

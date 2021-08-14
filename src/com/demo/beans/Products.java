@@ -1,11 +1,13 @@
 package com.demo.beans;
 
 public class Products {
+	private int pid;
     private String name;
     private int quantity;
     private double price;
     public Products() {
  		super();
+ 		this.pid=0;
  		this.name = null;
  		this.quantity = 0;
  		this.price = 0;
@@ -16,7 +18,21 @@ public class Products {
 		this.quantity = quantity;
 		this.price = price;
 	}
-
+    
+    public Products(int pid,String name, double price, int quantity) {
+		super();
+		this.pid=pid;
+		this.name = name;
+		this.quantity = quantity;
+		this.price = price;
+	}
+    
+	public int getPid() {
+		return pid;
+	}
+	public void setPid(int pid) {
+		this.pid = pid;
+	}
 	public String getName() {
 		return name;
 	}
